@@ -1,0 +1,53 @@
+@use "styles/mixins" as *;
+
+.banner {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  color: var(--color-medium, var(--primary-medium));
+  text-align: center;
+  align-items: center;
+  font-size: calc(12px + 2 * (100vw - 320px) / 1080);
+  font-weight: 500;
+  padding: 0.85em;
+  letter-spacing: -0.015em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background: var(--color-medium, var(--primary-medium));
+    border-radius: 0 0 var(--radius-s) var(--radius-s);
+    pointer-events: none;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.tag {
+  font-size: 0.8em;
+  font-weight: 800;
+  color: var(--color-medium, var(--primary-medium));
+  padding: 0.3em 0.75em;
+  position: relative;
+
+  &::before {
+    border-radius: var(--radius-rounded);
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background: var(--color-medium, var(--primary-medium));
+  }
+}
